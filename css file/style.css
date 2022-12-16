@@ -1,0 +1,74 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: white;
+}
+body {
+  background-color: grey;
+}
+
+/* section-1 */
+
+.background-image .black-bg {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.548);
+  width: 100%;
+  height: 650px;
+}
+.background-image .img-content {
+  top: 15%;
+}
+
+/* section-2 */
+
+.watch-tv-box img {
+  width: 400px;
+  height: 350px;
+}
+
+.tv-box-section .video-container {
+  width: 100%;
+  height: 100%;
+  left: -2px;
+  top: -6px;
+}
+.tv-box-section video {
+  width: 294px;
+  height: 183px;
+}
+
+/* section-3 */
+
+.mobile-tv-box img {
+  width: 400px;
+  height: 350px;
+}
+.mobile-tv-box .book-img {
+  width: 60px;
+  height: 75px;
+}
+.mobile-tv-box .animate-box {
+  bottom: 70px;
+}
+.mobile-tv-box .animate-img {
+  width: 60px;
+  height: 60px;
+}
+
+/* section-4 */
+
+.watch-tab-box img {
+  width: 540px;
+  height: 390px;
+}
+
+.tab-box-section .video-container {
+  width: 100%;
+  height: 100%;
+  left: -2px;
+  top: -70px;
+}
+.tab-box-section video {
+  width: 333px;
+}
