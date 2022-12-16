@@ -1,0 +1,59 @@
+@media (max-width: 576px) {
+  /* section-1 */
+
+  .nav-bar .nav-rw {
+    padding: 24px 25px;
+    justify-content: space-between;
+  }
+
+  /* section-2 */
+
+  .tv-box-section .watch-tv-box {
+    padding: 20px;
+  }
+  .tv-box-section .watch-tv-box .watch-tv-row {
+    padding: 20px;
+  }
+  .watch-tv-box img {
+    width: 300px;
+    height: 300px;
+  }
+  .tv-box-section video {
+    width: 219px;
+  }
+
+  /* section-3 */
+
+  .mobile-tv-box img {
+    width: 350px;
+    height: 330px;
+  }
+  .mobile-tv-box .animate-box {
+    bottom: 65px;
+  }
+
+  /* section-4 */
+
+  .tab-box-section .watch-tab-box {
+    padding: 20px;
+  }
+  .tab-box-section .watch-tab-box .watch-tab-row {
+    padding: 20px;
+  }
+  .watch-tab-box img {
+    width: 350px;
+    height: 350px;
+  }
+  .tab-box-section video {
+    width: 219px;
+  }
+
+  /* section-6 */
+
+  .intro-questions .intro-ques h1 {
+    padding-top: 20px;
+  }
+  .accordion-button {
+    padding: 10px;
+  }
+}
