@@ -31,6 +31,9 @@ li:hover {
 .background-image .img-content {
   top: 15%;
 }
+.nav-bar a:hover {
+  color: white;
+}
 
 /* section-2 */
 
