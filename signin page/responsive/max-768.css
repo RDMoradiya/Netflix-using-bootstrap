@@ -1,0 +1,19 @@
+@media (max-width: 768px) {
+  .background-image .black-bg {
+    background-color: rgb(0, 0, 0);
+    height: 950px;
+  }
+  .background-image .bgimage {
+    height: 950px;
+  }
+  .background-image .formcontainer {
+    margin-top: 0px;
+    padding: 20px;
+    width: 250pxpx;
+  }
+
+  .background-image .login-footer {
+    border-top: 2px solid grey;
+    padding-top: 0px;
+  }
+}

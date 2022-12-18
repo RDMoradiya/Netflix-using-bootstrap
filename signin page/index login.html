@@ -25,11 +25,18 @@
     />
     <!-- css file -->
     <link rel="stylesheet" href="style login.css" />
+    <link rel="stylesheet" href="responsive/max-768.css" />
   </head>
   <body>
     <section class="bg-black text-white position-relative">
       <div class="background-image d-flex justify-content-center">
-        <img src="background img.jpg" alt="" width="100%" height="1150px" />
+        <img
+          src="background img.jpg"
+          alt=""
+          width="100%"
+          height="1150px"
+          class="bgimage"
+        />
         <div class="black-bg"></div>
         <!-- nav-bar -->
         <div class="container-fluid position-absolute nav-bar ps-5">
@@ -37,19 +44,21 @@
             <div
               class="logo col-auto col-xxl-2 col-xl-2 col-lg-2 col-md-2 col-sm-2 p-0"
             >
-              <img
-                src="../netflix-web-logo.png"
-                alt=""
-                width="170px"
-                height="45px"
-              />
+              <a href="../index.html">
+                <img
+                  src="../netflix-web-logo.png"
+                  alt=""
+                  width="170px"
+                  height="45px"
+                />
+              </a>
             </div>
           </div>
         </div>
         <!-- log-in form -->
         <div
-          class="container border-light position-absolute bg-black bg-opacity-75 p-sm-5 d-flex flex-column align-items-center"
-          style="top: 10%; width: 470px; height: auto"
+          class="container border-light position-absolute bg-black bg-opacity-75 p-sm-5 d-flex flex-column align-items-center formcontainer"
+          style="top: 10%; width: auto; height: auto"
         >
           <form onsubmit="return emailvalidation()">
             <div class="pb-sm-3 w-100"><h1>Sign In</h1></div>
@@ -63,7 +72,7 @@
                 style="
                   background-color: #333;
                   height: 50px;
-                  width: 370px;
+                  width: 100%;
                   box-shadow: none;
                   color: white;
                 "
@@ -83,7 +92,7 @@
                 style="
                   background-color: #333;
                   height: 50px;
-                  width: 370px;
+                  width: 100%;
                   box-shadow: none;
                   color: white;
                 "
@@ -106,17 +115,22 @@
             <!-- submit button -->
             <input
               type="submit"
-              class="w-100 mt-4 rounded-3"
+              class="mt-4 rounded-3"
               style="
                 background-color: #e50914;
                 font-size: 16px;
                 padding: 10px;
                 font-weight: 500;
+                width: 100%;
+                border: none;
               "
               value="Sign In"
             />
             <!-- checkbox -->
-            <div class="pt-2 form-check d-flex justify-content-between">
+            <div
+              class="pt-2 form-check d-flex justify-content-between"
+              style="width: 100%"
+            >
               <div>
                 <input type="checkbox" class="form-check-input" />
                 <label for="" class="form-check-label">Remember me</label>
@@ -129,23 +143,65 @@
               </h6>
             </div>
 
-            <div class="mt-5">
-              <h5 class="fw-lighter" style="font-size: 15px">
-                New to Netflix?
-                <a
-                  href="../index.html"
-                  style="color: white; font-weight: 500; font-size: 17px"
-                >
-                  Sign up now.
-                </a>
-              </h5>
+            <div style="width: 100%">
+              <div class="mt-5">
+                <h5 class="fw-lighter" style="font-size: 15px">
+                  New to Netflix?
+                  <a
+                    href="../index.html"
+                    style="color: white; font-weight: 500; font-size: 17px"
+                  >
+                    Sign up now.
+                  </a>
+                </h5>
+              </div>
+              <p class="mt-2 fw-lighter" style="font-size: 13px">
+                This page is protected by Google reCAPTCHA to ensure you're not
+                a bot. <a href="">Learn more.</a>
+              </p>
             </div>
-            <p class="mt-2 fw-lighter" style="font-size: 13px">
-              This page is protected by Google reCAPTCHA to ensure you're not a
-              bot. <a href="">Learn more.</a>
-            </p>
           </form>
         </div>
+
+        <!-- footer -->
+        <footer
+          class="login-footer position-absolute bg-black bg-opacity-75 w-100 bottom-0 p-sm-5 p-3"
+        >
+          <div class="container p-sm-5">
+            <div class="row">
+              <p class="fw-lighter">
+                Questions? Call
+                <a href="" class="text-decoration-underline"
+                  >000-800-919-1694</a
+                >
+              </p>
+            </div>
+            <div class="row">
+              <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-3 col-sm-6">
+                <li><a href="#">FAQ</a></li>
+                <li><a href="#">Cookie Preferences</a></li>
+              </div>
+              <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-3 col-sm-6">
+                <li><a href="#">Help Centre</a></li>
+                <li><a href="#">Corporate Information</a></li>
+              </div>
+              <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-3 col-sm-6">
+                <li><a href="#">Terms of Use</a></li>
+              </div>
+              <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-3 col-sm-6">
+                <li><a href="#">Terms of UsePrivacy</a></li>
+              </div>
+            </div>
+            <div class="row pt-3">
+              <div class="col">
+                <select name="" id="" class="bg-transparent p-2">
+                  <option value="" class="bg-black">English</option>
+                  <option value="" class="bg-black">Hindi</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </footer>
       </div>
     </section>
 

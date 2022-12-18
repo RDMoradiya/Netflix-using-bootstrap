@@ -16,7 +16,12 @@
 }
 a {
   text-decoration: none;
+  color: white;
 }
 a:hover {
   text-decoration: underline;
+}
+li {
+  list-style: none;
+  padding: 5px 0px;
 }

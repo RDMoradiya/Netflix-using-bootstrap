@@ -26,10 +26,10 @@ li:hover {
   position: absolute;
   background-color: rgba(0, 0, 0, 0.548);
   width: 100%;
-  height: 650px;
+  height: 750px;
 }
 .background-image .img-content {
-  top: 15%;
+  top: 25%;
 }
 .nav-bar a:hover {
   color: white;
