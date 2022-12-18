@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.1.js"></script>
+    <!-- font awesome cdn -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+    />
+    <!-- custom css -->
+    <script>
+      function form_valid() {
+        let fname = document.form1.fname.value;
+        if (fname == "") {
+          document.getElementById("fmsg").innerHTML = "Enter first name";
+          return false;
+        } else if (!isNaN(fname)) {
+          document.getElementById("fmsg").innerHTML = "Enter alphabets only";
+          return false;
+        }
+
+        let male = document.form1.gen[0].checked;
+        let female = document.form1.gen[1].checked;
+        if (male == false && female == false) {
+          document.getElementById("gmsg").innerHTML = "Select Gender";
+          return false;
+        }
+
+        let check1 = document.form1.c1.checked;
+        let check2 = document.form1.c2.checked;
+        let check3 = document.form1.c3.checked;
+
+        if (check1 == false && check2 == false && check3 == false) {
+          document.getElementById("cmsg").innerHTML = "Select Subjects";
+          return false;
+        }
+
+        let adrs = document.form1.address.value;
+        if (adrs == "") {
+          document.getElementById("addmsg").innerHTML = "enter address";
+          return false;
+        } else if (adrs.length > 0 || adrs.length < 100) {
+          document.getElementById("addmsg").innerHTML =
+            "enter address is not more than 100 characters";
+          return false;
+        }
+
+        let exp = document.form1.exp.value;
+        if (exp == -1) {
+          document.getElementById("dropmsg").innerHTML = "select experiance";
+          return false;
+        }
+
+        let mobile = document.form1.mno.value;
+        if (mobile == "") {
+          document.getElementById("mo_msg").innerHTML = "Enter mobile no";
+          return false;
+        } else if (isNaN(mobile)) {
+          document.getElementById("mo_msg").innerHTML = "Enter digits only";
+          return false;
+        } else if (mobile.length < 10) {
+          document.getElementById("mo_msg").innerHTML = "enter 10 digits";
+          return false;
+        }
+      }
+    </script>
+    <script>
+      $(function () {
+        $navbar = $(".home-bg-image");
+        $(window).scroll(function () {
+          $current = $(this).scrollTop();
+          if ($current > 0) {
+            $navbar.addClass("change-menu");
+          } else {
+            $navbar.removeClass("change-menu");
+          }
+        });
+      });
+    </script>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      a {
+        text-decoration: none;
+        color: white;
+      }
+      ul {
+        list-style: none;
+      }
+      body {
+        background: conic-gradient(#123456, #ab6755, #c16970, #123456);
+      }
+      #nav .home-bg-image {
+        background-color: rgb(104, 66, 15);
+        position: fixed;
+        top: 0;
+        width: 100%;
+        transition: 1s ease all;
+      }
+      .home-bg-image .container {
+        margin-left: 100px;
+        margin-right: 100px;
+      }
+      .home-bg-image .header-nav {
+        padding: 20px;
+        display: flex;
+      }
+      .home-bg-image .header-nav .logo {
+        flex: 1;
+        padding: 30px 0px;
+      }
+      .home-bg-image .header-nav .middle-nav {
+        flex: 3;
+        display: flex;
+      }
+      .home-bg-image .header-nav .middle-nav .nav-link {
+        flex: 2;
+        padding: 20px 0px;
+      }
+      .home-bg-image .header-nav .middle-nav .nav-link ul {
+        display: flex;
+        justify-content: space-between;
+      }
+      .home-bg-image .header-nav .nav-link li {
+        padding: 20px;
+      }
+      .home-bg-image .header-nav .middle-nav .search {
+        flex: 1;
+        padding: 30px;
+        display: flex;
+        justify-content: flex-end;
+      }
+      .home-bg-image .header-nav .middle-nav .btn1 {
+        height: 40px;
+        width: 120px;
+        border-radius: 10px;
+        border: none;
+        background: #ffffff63;
+        color: white;
+        font-weight: 800;
+      }
+      .home-bg-image .header-nav .theme {
+        flex: 1;
+        padding: 35px 0px;
+      }
+      .home-bg-image .header-nav .theme span {
+        font-size: 30px;
+      }
+      /* ================ registration form =================== */
+      .register-form {
+        height: auto;
+        width: 450px;
+        box-shadow: 0px 0px 5px black;
+        margin: 50px auto;
+        background-color: white;
+      }
+      .row {
+        display: flex;
+      }
+      .col {
+        flex: 1;
+        text-align: right;
+        padding: 15px;
+      }
+      .col-1 {
+        flex: 2;
+        padding: 15px;
+      }
+      .col-1 span {
+        color: red;
+      }
+      input[type="text"],
+      [type="password"] {
+        width: 230px;
+        height: 25px;
+        padding: 5px;
+      }
+
+      /* ==== for toggle menubar ===== */
+      .disp-menu {
+        height: 40px;
+        width: 40px;
+        margin: 30px 2px;
+        border: none;
+        border-radius: 10px;
+        display: none;
+      }
+
+      @media (max-width: 576px) {
+        .disp-menu {
+          display: block;
+          position: relative;
+        }
+        .home-bg-image .header-nav .middle-nav .nav-link {
+          display: none;
+        }
+        .home-bg-image .header-nav .middle-nav .list-menu {
+          position: absolute;
+          top: 95px;
+          right: 0px;
+          width: 165px;
+          height: auto;
+          background-color: black;
+          display: block;
+        }
+        .home-bg-image .header-nav .middle-nav .list-menu ul {
+          display: flex;
+          flex-direction: column;
+        }
+        .home-bg-image .header-nav .list-menu li {
+          padding: 10px;
+        }
+      }
+      @media (min-width: 576px) {
+        .disp-menu {
+          display: block;
+          position: relative;
+        }
+        .home-bg-image .header-nav .middle-nav .nav-link {
+          display: none;
+        }
+        .home-bg-image .header-nav .middle-nav .list-menu {
+          position: absolute;
+          top: 95px;
+          right: 0px;
+          width: 165px;
+          height: auto;
+          background-color: black;
+          display: block;
+        }
+        .home-bg-image .header-nav .middle-nav .list-menu ul {
+          display: flex;
+          flex-direction: column;
+        }
+        .home-bg-image .header-nav .list-menu li {
+          padding: 10px;
+        }
+      }
+      @media (min-width: 992px) {
+        .disp-menu {
+          display: none;
+        }
+        .home-bg-image .header-nav .middle-nav .nav-link {
+          display: block;
+        }
+      }
+      /* =============== theme ==================== */
+      .dark-mode {
+        background-color: black;
+        color: white;
+      }
+      .dark-mode .register-form {
+        background-color: black;
+        color: white;
+      }
+
+      /* ============== change menubar color when scroll ============= */
+      #nav .change-menu {
+        background-color: #b2c8df;
+      }
+      #nav .change-menu a {
+        color: black;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- menubar -->
+    <section id="nav">
+      <div class="home-bg-image">
+        <div class="container">
+          <div class="header-nav">
+            <div class="logo">
+              <a href=""><h1>Register</h1></a>
+            </div>
+            <div class="middle-nav">
+              <div class="nav-link">
+                <ul>
+                  <li><a href="">Home</a></li>
+                  <li><a href="">Contact</a></li>
+                  <li><a href="">About</a></li>
+                  <li><a href="">Help</a></li>
+                  <li><a href="">Service</a></li>
+                </ul>
+              </div>
+              <div class="search">
+                <button class="btn1">Search</button>
+              </div>
+              <button class="disp-menu">
+                <span class="fa-solid fa-bars"></span>
+              </button>
+            </div>
+            <div class="theme">
+              <span class="fa-solid fa-moon"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- registration page -->
+    <div class="register-form">
+      <form action="" method="get" name="form1">
+        <!--  input type text -->
+        <div class="row">
+          <div class="col"><label for="">First name</label></div>
+          <div class="col-1">
+            <input type="text" name="fname" id="" />
+            <span id="fmsg"></span>
+          </div>
+        </div>
+
+        <!--  input type radio -->
+        <div class="row">
+          <div class="col"><label for="">Gender</label></div>
+          <div class="col-1">
+            <input type="radio" name="gen" id="" />
+            <label for="">Male</label>
+            <input type="radio" name="gen" id="" />
+            <label for="">Female</label>
+            <span id="gmsg"></span>
+          </div>
+        </div>
+
+        <!--  input type checkbox -->
+        <div class="row">
+          <div class="col"><label for="">Subjects</label></div>
+          <div class="col-1">
+            <input type="checkbox" name="c1" id="" />
+            <label for="">HTML</label>
+            <input type="checkbox" name="c2" id="" />
+            <label for="">CSS</label>
+            <input type="checkbox" name="c3" id="" />
+            <label for="">Js</label>
+            <span id="cmsg"></span>
+          </div>
+        </div>
+
+        <!-- textarea -->
+        <div class="row">
+          <div class="col"><label for="">Address</label></div>
+          <div class="col-1">
+            <textarea name="address" id="" cols="30" rows="5"></textarea>
+            <span id="addmsg"></span>
+          </div>
+        </div>
+
+        <!-- select-option -->
+        <div class="row">
+          <div class="col"><label for="">Experiance</label></div>
+          <div class="col-1">
+            <select name="exp" id="">
+              <option value="-1">---select---</option>
+              <option value="">1 &lt;</option>
+              <option value="">1 &gt;</option>
+            </select>
+            <span id="dropmsg"></span>
+          </div>
+        </div>
+
+        <!-- email -->
+        <div class="row">
+          <div class="col"><label for="">Email</label></div>
+          <div class="col-1">
+            <input type="text" name="mail" id="" />
+            <span id="emasg"></span>
+          </div>
+        </div>
+
+        <!-- mobile no -->
+        <div class="row">
+          <div class="col"><label for="">Mobile no</label></div>
+          <div class="col-1">
+            <input type="text" name="mno" id="" maxlength="10" />
+            <span id="mo_msg"></span>
+          </div>
+        </div>
+
+        <!-- password -->
+        <div class="row">
+          <div class="col"><label for="">password</label></div>
+          <div class="col-1">
+            <input type="password" name="sec" id="" />
+            <span id="sec_msg"></span>
+          </div>
+        </div>
+
+        <!-- mobile no -->
+        <div class="row">
+          <div class="col"></div>
+          <div class="col-1">
+            <input type="checkbox" />
+            <label for="">Show Password</label>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col"></div>
+          <div class="col-1">
+            <button onclick="return form_valid()">Register</button>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <script src="togglemenu.js"></script>
+    <script src="changetheme.js"></script>
+  </body>
+</html>
