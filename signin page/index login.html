@@ -7,7 +7,6 @@
     <title>Netflix</title>
     <link rel="icon" href="../netflix-temp-logo-.png" />
     <!-- Bootstrap -->
-
     <!-- CSS only -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
@@ -26,6 +25,9 @@
     <!-- css file -->
     <link rel="stylesheet" href="style login.css" />
     <link rel="stylesheet" href="responsive/max-768.css" />
+
+    <!-- js -->
+    <script src="index login.js"></script>
   </head>
   <body>
     <section class="bg-black text-white position-relative">
@@ -60,12 +62,12 @@
           class="container border-light position-absolute bg-black bg-opacity-75 p-sm-5 d-flex flex-column align-items-center formcontainer"
           style="top: 10%; width: auto; height: auto"
         >
-          <form onsubmit="return emailvalidation()">
+          <form onsubmit="return vali_function()">
             <div class="pb-sm-3 w-100"><h1>Sign In</h1></div>
             <!-- email -->
             <div class="form-floating mb-3">
               <input
-                type="email"
+                type="text"
                 class="form-control border-0 mail-val"
                 id="floatingInput"
                 placeholder="name@example.com"
@@ -80,7 +82,7 @@
               <label for="floatingInput" style="line-height: 15px"
                 >Email or phone number</label
               >
-              <span id="mailspan" style="color: #e87c03"></span>
+              <span class="mail_sp" style="color: #e87c03"></span>
             </div>
             <!-- password -->
             <div class="form-floating">
@@ -100,7 +102,7 @@
               <label for="floatingPassword" style="line-height: 15px"
                 >Password</label
               >
-              <span style="color: #e87c03" id="ps"></span>
+              <span style="color: #e87c03" class="ps_val"></span>
             </div>
             <!-- show password -->
             <div class="pt-2 form-check">
@@ -204,10 +206,5 @@
         </footer>
       </div>
     </section>
-
-    <!-- js -->
-    <script src="index login.js"></script>
-    <!-- <script src="email.js"></script> -->
-    <!-- <script src="pass.js"></script> -->
   </body>
 </html>

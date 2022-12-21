@@ -25,8 +25,14 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
     />
 
+    <!-- css file -->
+
     <link rel="stylesheet" href="css file/style.css" />
     <link rel="stylesheet" href="responsive/max-576.css">
+
+    <!-- Javascript -->
+    <script src="js file/index.js"></script>
+
   </head>
   <body>
     <!-- Section-1 -->
@@ -69,10 +75,10 @@
               Ready to watch? Enter your email to create or restart your
               membership.
             </p>    
-            <div class="container d-flex justify-content-center  pt-3 ">           
+            <form class="container d-flex justify-content-center pt-3">        
               <input type="text" class="form-control w-50" placeholder="Email Address ..." id="email">               
-              <button class="border border-0 rounded-2 px-3 py-3" style="background-color:#e50914" onclick="return emailvalidation1()">Get Stared <i class="fa-solid fa-chevron-right" style="font-size: 15px"></i></button>               
-            </div>
+              <button class="border border-0 rounded-2 px-3 py-3" style="background-color:#e50914" onclick="return email_validation()">Get Stared <i class="fa-solid fa-chevron-right" style="font-size: 15px"></i></button>  
+            </form>
             <p style="color: yellow; bottom:0px;width: 145px;" class=" pt-2" id="eml"></p>
         </div>
       </div>
@@ -263,10 +269,10 @@
             </div>
           </div>
         <h6 class="fw-lighter pt-5 text-center">Ready to watch? Enter your email to create or restart your membership.</h6>
-        <div class="container d-flex justify-content-center  pt-3 ">           
+        <form class="container d-flex justify-content-center  pt-3 ">           
           <input type="text" class="form-control w-50" placeholder="Email Address ..." id="email2">               
           <button class="border border-0 rounded-2 px-3 py-3" style="background-color:#e50914" onclick="return emailvalidation2()">Get Stared <i class="fa-solid fa-chevron-right" style="font-size: 15px"></i></button>               
-        </div>
+        </form>
         <p style="color: yellow; bottom:0px;width: 100%;text-align: center;" class="pt-2" id="eml2"></p>
         </div>
       </div>
@@ -314,7 +320,6 @@
     </footer>     
     
    
-    <!-- Javascript -->
-    <script src="js file/index.js"></script>
+    
   </body>
 </html>

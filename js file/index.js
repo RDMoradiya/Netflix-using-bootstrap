@@ -1,4 +1,4 @@
-function emailvalidation1() {
+function email_validation() {
   let emailid = document.getElementById("email");
   if (emailid.value == "" || emailid.value == null) {
     document.getElementById("eml").innerHTML = "Email is required.";
